@@ -1,0 +1,370 @@
+body {
+  margin: 0;
+  background: linear-gradient(to right, rgba(18, 194, 233, 0.5), rgba(196, 113, 237, 0.5), rgba(246, 79, 89, 0.5));
+  font-family: sans-serif;
+}
+
+.backgroundImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -50;
+  overflow: hidden;
+}
+
+.backgroundImageWrapper>img {
+  opacity: 0.2;
+}
+
+h1 {
+  text-align: center;
+  height: 10vh;
+  margin-bottom: 0;
+  color: white;
+  font-size: 3rem;
+}
+
+.navWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  margin: 0 6rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  background-color: rgba(245, 245, 245, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  box-shadow: 3px 3px 10px rgba(154, 0, 154, 0.2),
+    -3px -3px 10px rgba(102, 0, 102, 0.2);
+}
+
+.navWrapper>nav {
+  flex-basis: 100%;
+  height: 7rem;
+  flex-grow: 0;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navWrapper>hr {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.navWrapper>nav>div {
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+/* --------------- NAV 1 --------------- */
+.nav1>div::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: -8%;
+  z-index: -1;
+  width: 0%;
+  height: 5px;
+  background-color: Aqua;
+  -webkit-transition: width 0.5s ease-out, left 0.5s ease-out;
+}
+
+.nav1>div:hover::before {
+  width: 58%;
+  left: 50%;
+}
+
+.nav1>div::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -8%;
+  z-index: -1;
+  width: 0%;
+  height: 5px;
+  background-color: Coral;
+  transition: width 0.5s ease-out, right 0.5s ease-out;
+}
+
+.nav1>div:hover::after {
+  width: 58%;
+  right: 50%;
+}
+
+/* --------------- NAV 2 --------------- */
+.nav2>div {
+  padding: 0.5rem 1.5rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  transition: color 0.5s ease-out;
+}
+
+.nav2>div:hover {
+  color: white;
+}
+
+.nav2>div::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  height: 0;
+  width: 10px;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: red;
+  transition: transform 0.5s ease-in;
+}
+
+.nav2>div:hover::before {
+  height: 10px;
+  transform: scale(15);
+}
+
+/* --------------- NAV 3 --------------- */
+.nav3>div {
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: transparent;
+  text-stroke: 2px DodgerBlue;
+  -moz-text-stroke: 2px DodgerBlue;
+  -o-text-stroke: 2px DodgerBlue;
+  -ms-text-stroke: 2px DodgerBlue;
+  -webkit-text-stroke: 2px DodgerBlue;
+  transition: color 0.5s ease-out;
+}
+
+.nav3>div:hover {
+  color: DodgerBlue;
+}
+
+/* --------------- NAV 4 --------------- */
+.nav4>div {
+  padding: 0.5rem 1.5rem;
+  color: purple;
+  transition: color 0.3s ease-in;
+}
+
+.nav4>div:hover {
+  color: white;
+}
+
+.nav4>div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transform: scale(0);
+  z-index: -1;
+  transition: transform 0.3s ease-in, background-color 0.3s ease-in;
+}
+
+.nav4>div:hover::before {
+  transform: scale(1);
+  background-color: purple;
+}
+
+/* --------------- NAV 5 --------------- */
+.nav5 {
+  border-radius: 5rem;
+  position: relative;
+  z-index: 5;
+  color: white;
+}
+
+.nav5::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  border-radius: 5rem;
+  z-index: -1;
+  transition: transform 0.2s ease-out;
+}
+
+.nav5:hover::before {
+  transform: rotateX(180deg);
+}
+
+.nav5>div {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav5>div::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5rem;
+  z-index: -1;
+}
+
+.nav5>div:hover::before {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -ms-backdrop-filter: blur(20px);
+}
+
+/* --------------- NAV 6 --------------- */
+.nav6>div {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.nav6>div:hover {
+  background-color: CornflowerBlue;
+  color: white;
+}
+
+.nav6>div::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: bottom 0.3s ease-out, left 0.3s ease-out, border-left 0.3s ease-out, border-bottom 0.3s ease-out;
+  ;
+}
+
+.nav6>div:hover::before {
+  bottom: -5px;
+  left: -5px;
+  border-left: 2px solid CornflowerBlue;
+  border-bottom: 2px solid CornflowerBlue;
+}
+
+.nav6>div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-right: 2px solid transparent;
+  border-top: 2px solid transparent;
+  transition: top 0.3s ease-out, right 0.3s ease-out, border-right 0.3s ease-out, border-top 0.3s ease-out;
+}
+
+.nav6>div:hover::after {
+  top: -5px;
+  right: -5px;
+  border-right: 2px solid CornflowerBlue;
+  border-top: 2px solid CornflowerBlue;
+}
+
+/* --------------- NAV 7 --------------- */
+.nav7>div {
+  padding: 0.2rem 0.5rem;
+  color: black;
+  transition: color 0.2s ease-out, background 0.5s ease-out 0.3s;
+}
+
+.nav7>div:hover {
+  color: transparent;
+  background: linear-gradient(to right, red, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nav7>div::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0%;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, red, purple);
+  transition: width 0.5s ease-out;
+}
+
+.nav7>div:hover::before {
+  width: 100%;
+}
+
+.nav7>div::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 0%;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, red, purple);
+  transition: width 0.5s ease-out;
+}
+
+.nav7>div:hover::after {
+  width: 100%;
+}
+
+/* --------------- NAV 7 --------------- */
+.nav8>div {
+  padding: 0.2rem 0.5rem;
+  color: black;
+  transition: color 0.2s ease-out, background 0.5s ease-out;
+}
+
+.nav8>div:hover {
+  color: white;
+  background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+}
+
+.nav8>div::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0%;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+  transition: width 0.5s ease-out;
+}
+
+.nav8>div:hover::before {
+  width: 100%;
+}
+
+.nav8>div::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 0%;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
+  transition: width 0.5s ease-out;
+}
+
+.nav8>div:hover::after {
+  width: 100%;
+}
